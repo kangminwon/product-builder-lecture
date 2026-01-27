@@ -1,4 +1,3 @@
-
 :root {
     --primary-color: #6c5ce7;
     --primary-hover: #5649c0;
@@ -26,19 +25,21 @@
 body {
     font-family: 'Poppins', sans-serif;
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
+    flex-direction: column;
     align-items: center;
     min-height: 100vh;
     background: var(--background-color);
     color: var(--text-color);
     transition: background-color 0.4s, color 0.4s;
-    padding: 50px 0; /* Add top/bottom padding */
-    gap: 40px; /* Space between sections */
+    padding: 50px 0;
+    gap: 40px;
 }
 
-.lotto-machine, .contact-section, .comments-section {
-    /* Reset margins as gap handles spacing now */
-    margin: 0; 
+/* Common Card Style */
+.lotto-machine, 
+.contact-section, 
+.comments-section,
+.ai-container {
     background-color: var(--card-bg);
     border-radius: 20px;
     padding: 40px;
@@ -53,16 +54,141 @@ body {
     transition: background-color 0.4s;
 }
 
-/* --- Cute AI Page Styles --- */
+/* Theme Toggle Button */
+.theme-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 10;
+}
+
+.theme-btn .moon { display: none; }
+[data-theme='dark'] .theme-btn .moon { display: inline; }
+[data-theme='dark'] .theme-btn .sun { display: none; }
+
+h1 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* Lotto Ball Styles */
+.ball-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    min-height: 60px;
+    width: 100%;
+}
+
+.ball {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2), inset 0 -5px 10px rgba(0,0,0,0.1);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    background-color: #dfe6e9; 
+    transition: transform 0.2s ease;
+}
+
+.ball:hover {
+    transform: scale(1.1);
+}
+
+/* Buttons */
+#draw-button, .action-btn, .submit-btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(108, 92, 231, 0.4);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#draw-button:hover, .action-btn:hover, .submit-btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(108, 92, 231, 0.5);
+}
+
+#draw-button:active, .action-btn:active, .submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Contact Form */
+.contact-section h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.contact-section form {
+    width: 100%;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+    width: 100%;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+[data-theme='dark'] .input-group input,
+[data-theme='dark'] .input-group textarea {
+    border-color: #444;
+}
+
+.input-group textarea {
+    height: 100px;
+    resize: none;
+}
+
+.submit-btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* AI Page Specifics */
 .ai-container {
-    background-color: var(--card-bg);
-    border-radius: 30px; /* Rounder corners */
-    padding: 50px 30px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    text-align: center;
-    max-width: 90%;
+    border-radius: 30px;
+    border: 4px solid #fff;
     width: 400px;
-    border: 4px solid #fff; /* Cute border */
 }
 
 [data-theme='dark'] .ai-container {
@@ -70,13 +196,14 @@ body {
 }
 
 .ai-title {
+    font-family: 'Jua', sans-serif;
     font-size: 1.8rem;
     color: var(--primary-color);
     margin-bottom: 10px;
-    font-weight: 700;
 }
 
 .ai-subtitle {
+    font-family: 'Jua', sans-serif;
     font-size: 1rem;
     color: #888;
     margin-bottom: 30px;
@@ -85,15 +212,17 @@ body {
 .file-upload-btn {
     display: inline-block;
     padding: 15px 30px;
-    background-color: #ff9ff3; /* Cute Pink */
+    background-color: #ff9ff3;
     color: white;
     border-radius: 50px;
     cursor: pointer;
     font-weight: bold;
     font-size: 1.1rem;
+    font-family: 'Jua', sans-serif;
     transition: transform 0.2s, background-color 0.3s;
     border: 2px solid white;
     box-shadow: 0 5px 15px rgba(255, 159, 243, 0.4);
+    margin-bottom: 20px;
 }
 
 .file-upload-btn:hover {
@@ -109,14 +238,14 @@ body {
     max-width: 100%;
     max-height: 300px;
     border-radius: 15px;
-    margin: 20px 0;
-    display: none; /* Hidden initially */
+    margin-bottom: 20px;
+    display: none;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .result-container {
-    margin-top: 20px;
     width: 100%;
+    margin-top: 10px;
 }
 
 .result-bar-container {
@@ -125,10 +254,11 @@ body {
     margin-bottom: 10px;
     font-size: 0.9rem;
     color: var(--text-color);
+    font-family: 'Jua', sans-serif;
 }
 
 .result-label {
-    width: 60px;
+    width: 80px;
     text-align: right;
     margin-right: 10px;
     font-weight: bold;
@@ -159,816 +289,7 @@ body {
     color: #b2bec3;
     text-decoration: none;
     font-size: 0.9rem;
+    font-family: 'Jua', sans-serif;
 }
+
 .back-link:hover { color: var(--primary-color); }
-
-
-.theme-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-}
-
-.theme-btn .moon { display: none; }
-[data-theme='dark'] .theme-btn .moon { display: inline; }
-[data-theme='dark'] .theme-btn .sun { display: none; }
-
-h1 {
-    margin-bottom: 30px;
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--text-color);
-}
-
-.ball-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 30px;
-    min-height: 60px; /* Keep space preventing layout shift */
-}
-
-.ball {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #fff;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2), inset 0 -5px 10px rgba(0,0,0,0.1);
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-    /* Background color is set by JS, but we can add a default */
-    background-color: #dfe6e9; 
-    transition: transform 0.2s ease;
-}
-
-.ball:hover {
-    transform: scale(1.1);
-}
-
-#draw-button {
-    padding: 12px 30px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 50px;
-    background-color: var(--primary-color);
-    color: white;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(108, 92, 231, 0.4);
-    transition: all 0.3s ease;
-}
-
-#draw-button:hover {
-    background-color: var(--primary-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(108, 92, 231, 0.5);
-}
-
-#draw-button:active {
-
-    transform: translateY(0);
-
-}
-
-
-
-.contact-section {
-
-    margin-top: 50px;
-
-    background-color: var(--card-bg);
-
-    border-radius: 20px;
-
-    padding: 30px;
-
-    box-shadow: var(--shadow);
-
-    max-width: 90%;
-
-    width: 500px;
-
-    transition: background-color 0.4s;
-
-}
-
-
-
-.contact-section h2 {
-
-    margin-bottom: 20px;
-
-    font-size: 1.5rem;
-
-    text-align: center;
-
-}
-
-
-
-.input-group {
-
-    margin-bottom: 15px;
-
-    text-align: left;
-
-}
-
-
-
-.input-group label {
-
-    display: block;
-
-    margin-bottom: 5px;
-
-    font-size: 0.9rem;
-
-    font-weight: 600;
-
-}
-
-
-
-.input-group input, 
-
-.input-group textarea {
-
-    width: 100%;
-
-    padding: 12px;
-
-    border-radius: 10px;
-
-    border: 1px solid #ddd;
-
-    background-color: var(--background-color);
-
-    color: var(--text-color);
-
-    font-family: inherit;
-
-    transition: all 0.3s ease;
-
-}
-
-
-
-[data-theme='dark'] .input-group input,
-
-[data-theme='dark'] .input-group textarea {
-
-    border-color: #444;
-
-}
-
-
-
-.input-group textarea {
-
-    height: 100px;
-
-    resize: none;
-
-}
-
-
-
-.submit-btn {
-
-    width: 100%;
-
-    padding: 12px;
-
-    border-radius: 10px;
-
-    border: none;
-
-    background-color: var(--primary-color);
-
-    color: white;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition: background-color 0.3s;
-
-}
-
-
-
-.submit-btn:hover {
-
-
-
-    background-color: var(--primary-hover);
-
-
-
-}
-
-
-
-
-
-
-
-.comments-section {
-
-
-
-
-
-
-
-    margin-top: 50px;
-
-
-
-
-
-
-
-    margin-bottom: 50px;
-
-
-
-
-
-
-
-    background-color: var(--card-bg);
-
-
-
-
-
-
-
-    border-radius: 20px;
-
-
-
-
-
-
-
-    padding: 30px;
-
-
-
-
-
-
-
-    box-shadow: var(--shadow);
-
-
-
-
-
-
-
-    max-width: 90%;
-
-
-
-
-
-
-
-    width: 500px;
-
-
-
-
-
-
-
-    transition: background-color 0.4s;
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.ai-section, .ai-content {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    margin-top: 50px;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    background-color: var(--card-bg);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    border-radius: 20px;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    padding: 30px;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    box-shadow: var(--shadow);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    max-width: 90%;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    width: 500px;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    text-align: center;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    transition: background-color 0.4s;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.ai-section h2, .ai-content h2 {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    margin-bottom: 20px;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#webcam-container {
-
-
-
-
-
-
-
-    margin: 20px auto;
-
-
-
-
-
-
-
-    border-radius: 15px;
-
-
-
-
-
-
-
-    overflow: hidden;
-
-
-
-
-
-
-
-    width: 200px;
-
-
-
-
-
-
-
-    height: 200px;
-
-
-
-
-
-
-
-    background-color: var(--background-color);
-
-
-
-
-
-
-
-    box-shadow: var(--shadow);
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#label-container {
-
-
-
-
-
-
-
-    margin-top: 20px;
-
-
-
-
-
-
-
-    font-weight: 600;
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.action-btn {
-
-
-
-
-
-
-
-    padding: 10px 20px;
-
-
-
-
-
-
-
-    border-radius: 50px;
-
-
-
-
-
-
-
-    border: none;
-
-
-
-
-
-
-
-    background-color: var(--primary-color);
-
-
-
-
-
-
-
-    color: white;
-
-
-
-
-
-
-
-    cursor: pointer;
-
-
-
-
-
-
-
-    font-weight: 600;
-
-
-
-
-
-
-
-    transition: background-color 0.3s;
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.action-btn:hover {
-
-
-
-
-
-
-
-    background-color: var(--primary-hover);
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
