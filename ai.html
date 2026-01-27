@@ -1,34 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cat vs Dog Classifier</title>
+    <title>강아지상 vs 고양이상 테스트</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <style>
+        /* 한글 폰트 적용 */
+        body, h1, h2, button, .ai-title, .result-label {
+            font-family: 'Jua', 'Poppins', sans-serif;
+        }
+    </style>
 </head>
 <body>
-    <div class="lotto-machine"> <!-- Using same container style for consistency -->
-        <h1>Cat vs Dog Classifier</h1>
-        
-        <button id="theme-toggle" class="theme-btn">
-            <span class="sun">☀️</span>
-            <span class="moon">🌙</span>
-        </button>
 
-        <div class="ai-content">
-            <button type="button" class="action-btn" onclick="initAI()">Start Camera</button>
-            <div id="webcam-container"></div>
-            <div id="label-container"></div>
+    <div class="ai-container">
+        <h1 class="ai-title">🐶 강아지 vs 고양이 🐱</h1>
+        <p class="ai-subtitle">나는 어떤 동물과 닮았을까?</p>
+
+        <!-- 이미지 업로드 버튼 -->
+        <label for="upload-input" class="file-upload-btn">
+            📸 사진 선택하기
+        </label>
+        <input type="file" id="upload-input" class="file-upload-input" accept="image/*" onchange="handleImageUpload(this)">
+
+        <!-- 이미지 미리보기 -->
+        <div id="preview-container">
+            <img id="image-preview" src="#" alt="미리보기" />
+            <p id="loading-msg" style="display:none; color: #888;">AI가 분석 중입니다... 🐾</p>
         </div>
-        
-        <div style="margin-top: 30px;">
-            <a href="index.html" class="action-btn" style="text-decoration: none; background-color: #fab1a0;">Back to Lotto</a>
-        </div>
+
+        <!-- 결과 표시 -->
+        <div id="result-container" class="result-container"></div>
+
+        <a href="index.html" class="back-link">← 로또 하러 가기</a>
     </div>
 
     <script src="ai.js"></script>
