@@ -1,6 +1,34 @@
 
 const ballContainer = document.querySelector(".ball-container");
 const drawButton = document.getElementById("draw-button");
+const themeToggleButton = document.getElementById("theme-toggle");
+
+// Function to apply the theme
+const applyTheme = (theme) => {
+    if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+        document.documentElement.removeAttribute('data-theme');
+    }
+};
+
+// Check for saved theme preference
+const savedTheme = localStorage.getItem('theme') || 'light';
+applyTheme(savedTheme);
+
+
+// Theme toggle button event listener
+themeToggleButton.addEventListener("click", () => {
+    let currentTheme = document.documentElement.getAttribute('data-theme');
+    if (currentTheme === 'dark') {
+        localStorage.setItem('theme', 'light');
+        applyTheme('light');
+    } else {
+        localStorage.setItem('theme', 'dark');
+        applyTheme('dark');
+    }
+});
+
 
 drawButton.addEventListener("click", () => {
     ballContainer.innerHTML = ""; // Clear previous balls

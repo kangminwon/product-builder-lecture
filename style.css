@@ -1,3 +1,4 @@
+
 :root {
     --primary-color: #6c5ce7;
     --primary-hover: #5649c0;
@@ -5,6 +6,15 @@
     --card-bg: #ffffff;
     --text-color: #2d3436;
     --shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+    --primary-color: #8a7ff0;
+    --primary-hover: #7a6de4;
+    --background-color: #1a1a2e;
+    --card-bg: #16213e;
+    --text-color: #e0e0e0;
+    --shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
 * {
@@ -19,8 +29,9 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    background: var(--background-color);
     color: var(--text-color);
+    transition: background-color 0.4s, color 0.4s;
 }
 
 .lotto-machine {
@@ -34,7 +45,23 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    transition: background-color 0.4s;
 }
+
+.theme-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.theme-btn .moon { display: none; }
+[data-theme='dark'] .theme-btn .moon { display: inline; }
+[data-theme='dark'] .theme-btn .sun { display: none; }
 
 h1 {
     margin-bottom: 30px;
