@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat vs Dog Classifier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+</head>
+<body>
+    <div class="lotto-machine"> <!-- Using same container style for consistency -->
+        <h1>Cat vs Dog Classifier</h1>
+        
+        <button id="theme-toggle" class="theme-btn">
+            <span class="sun">☀️</span>
+            <span class="moon">🌙</span>
+        </button>
+
+        <div class="ai-content">
+            <button type="button" class="action-btn" onclick="initAI()">Start Camera</button>
+            <div id="webcam-container"></div>
+            <div id="label-container"></div>
+        </div>
+        
+        <div style="margin-top: 30px;">
+            <a href="index.html" class="action-btn" style="text-decoration: none; background-color: #fab1a0;">Back to Lotto</a>
+        </div>
+    </div>
+
+    <script src="ai.js"></script>
+</body>
+</html>

@@ -273,7 +273,15 @@ h1 {
 
 
 
+
+
+
+
     margin-top: 50px;
+
+
+
+
 
 
 
@@ -281,7 +289,15 @@ h1 {
 
 
 
+
+
+
+
     background-color: var(--card-bg);
+
+
+
+
 
 
 
@@ -289,7 +305,15 @@ h1 {
 
 
 
+
+
+
+
     padding: 30px;
+
+
+
+
 
 
 
@@ -297,7 +321,15 @@ h1 {
 
 
 
+
+
+
+
     max-width: 90%;
+
+
+
+
 
 
 
@@ -305,11 +337,523 @@ h1 {
 
 
 
+
+
+
+
     transition: background-color 0.4s;
 
 
 
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ai-section, .ai-content {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    margin-top: 50px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    background-color: var(--card-bg);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    border-radius: 20px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    padding: 30px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    box-shadow: var(--shadow);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    max-width: 90%;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    width: 500px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    text-align: center;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    transition: background-color 0.4s;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ai-section h2, .ai-content h2 {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    margin-bottom: 20px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#webcam-container {
+
+
+
+
+
+
+
+    margin: 20px auto;
+
+
+
+
+
+
+
+    border-radius: 15px;
+
+
+
+
+
+
+
+    overflow: hidden;
+
+
+
+
+
+
+
+    width: 200px;
+
+
+
+
+
+
+
+    height: 200px;
+
+
+
+
+
+
+
+    background-color: var(--background-color);
+
+
+
+
+
+
+
+    box-shadow: var(--shadow);
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#label-container {
+
+
+
+
+
+
+
+    margin-top: 20px;
+
+
+
+
+
+
+
+    font-weight: 600;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.action-btn {
+
+
+
+
+
+
+
+    padding: 10px 20px;
+
+
+
+
+
+
+
+    border-radius: 50px;
+
+
+
+
+
+
+
+    border: none;
+
+
+
+
+
+
+
+    background-color: var(--primary-color);
+
+
+
+
+
+
+
+    color: white;
+
+
+
+
+
+
+
+    cursor: pointer;
+
+
+
+
+
+
+
+    font-weight: 600;
+
+
+
+
+
+
+
+    transition: background-color 0.3s;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.action-btn:hover {
+
+
+
+
+
+
+
+    background-color: var(--primary-hover);
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
 
 
 
