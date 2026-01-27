@@ -10,6 +10,17 @@ const applyTheme = (theme) => {
     } else {
         document.documentElement.removeAttribute('data-theme');
     }
+
+    // Reload Disqus to match the new theme
+    if (typeof DISQUS !== 'undefined') {
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                this.page.identifier = document.title;
+                this.page.url = window.location.href;
+            }
+        });
+    }
 };
 
 // Check for saved theme preference
