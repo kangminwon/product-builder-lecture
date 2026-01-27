@@ -26,8 +26,7 @@ if (themeToggleButton) {
 }
 
 // --- Teachable Machine Logic ---
-// TODO: 아래 URL을 실제 모델 주소로 변경해주세요! (예: https://teachablemachine.withgoogle.com/models/AbCdEfG/)
-const URL = "https://teachablemachine.withgoogle.com/models/YOUR_MODEL_ID_HERE/"; 
+const URL = "https://teachablemachine.withgoogle.com/models/TKeNZn2yz/"; 
 
 let model, webcam, labelContainer, maxPredictions;
 
