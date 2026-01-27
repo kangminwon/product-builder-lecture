@@ -14,7 +14,7 @@ let model, labelContainer, maxPredictions;
         console.log("Model loaded successfully");
     } catch (e) {
         console.error("Model loading failed:", e);
-        alert("모델을 불러오는데 실패했습니다. 인터넷 연결을 확인해주세요!");
+        // alert("모델을 불러오는데 실패했습니다. 인터넷 연결을 확인해주세요!"); // 페이지 이동 시 불필요한 알림 방지
     }
 })();
 
