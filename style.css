@@ -255,6 +255,62 @@ h1 {
 
 .submit-btn:hover {
 
+
+
     background-color: var(--primary-hover);
 
+
+
 }
+
+
+
+
+
+
+
+.comments-section {
+
+
+
+    margin-top: 50px;
+
+
+
+    margin-bottom: 50px;
+
+
+
+    background-color: var(--card-bg);
+
+
+
+    border-radius: 20px;
+
+
+
+    padding: 30px;
+
+
+
+    box-shadow: var(--shadow);
+
+
+
+    max-width: 90%;
+
+
+
+    width: 500px;
+
+
+
+    transition: background-color 0.4s;
+
+
+
+}
+
+
+
+
