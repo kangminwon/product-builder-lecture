@@ -61,6 +61,10 @@ body {
     transition: background-color 0.4s;
 }
 
+#disqus_thread {
+    width: 100%;
+}
+
 /* Theme Toggle Button */
 .theme-btn {
     position: absolute;
